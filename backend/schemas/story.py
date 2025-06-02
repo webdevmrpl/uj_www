@@ -14,3 +14,4 @@ class Story(LateralBase):
     situation: str = Field(..., title="Situation of the story")
     solution: str = Field(..., title="Solution of the story")
     key_points: list[KeyPoint]
+    difficulty: int = Field(..., title="Difficulty of the story in range 1-3")
