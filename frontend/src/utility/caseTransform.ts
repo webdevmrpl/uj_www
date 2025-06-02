@@ -3,14 +3,28 @@ type CaseTransformOptions = {
 };
 
 const toCamelCase = (str: string): string => {
-  return str.toLowerCase().replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+  // Special case for _id
+  if (str === '_id') return 'id';
+  
+  const hasUnderscorePrefix = str.startsWith('_');
+  const baseString = hasUnderscorePrefix ? str.slice(1) : str;
+  
+  const camelCased = baseString.toLowerCase().replace(/_([a-z])/g, (_, letter) => letter.toUpperCase());
+  return hasUnderscorePrefix ? `_${camelCased}` : camelCased;
 };
 
 const toSnakeCase = (str: string): string => {
-  return str
+  // Special case for id
+  if (str === 'id') return 'id';
+  
+  const hasUnderscorePrefix = str.startsWith('_');
+  const baseString = hasUnderscorePrefix ? str.slice(1) : str;
+  
+  const snakeCased = baseString
     .replace(/([A-Z])/g, '_$1')
     .toLowerCase()
     .replace(/^_/, '');
+  return hasUnderscorePrefix ? `_${snakeCased}` : snakeCased;
 };
 
 export const transformKeysToCamelCase = <T extends object>(

@@ -14,11 +14,11 @@ export const setSessionCookie = (storyId: string, sessionId: string): void => {
 };
 
 export const checkAndGetSessionId = async (story: IStory): Promise<string> => {
-    const sessionId = getSessionCookie(story.Id);
+    const sessionId = getSessionCookie(story.id);
 
     if (!sessionId) {
         try {
-            const response = await fetch(`http://localhost:8001/conversation/get_session_id?story_id=${story.Id}`, {
+            const response = await fetch(`http://localhost:8001/conversation/get_session_id?story_id=${story.id}`, {
                 method: 'POST',
             });
 
@@ -27,7 +27,7 @@ export const checkAndGetSessionId = async (story: IStory): Promise<string> => {
             }
 
             const data = await response.json();
-            setSessionCookie(story.Id, data.session_id);
+            setSessionCookie(story.id, data.session_id);
             return data.session_id;
         } catch (error) {
             console.error('There was an error generating the session ID!', error);

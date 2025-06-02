@@ -12,6 +12,7 @@ interface IStoryRaw {
     solution: string;
     key_points: IKeyPoint[];
     answer: string;
+    difficulty: number;
 }
 
 export type IStory = CamelCasedPropertiesDeep<IStoryRaw>;
