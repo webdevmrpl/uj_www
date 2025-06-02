@@ -13,10 +13,10 @@ services:
       - "3000:3000"
       - "8001:8001"
     networks:
-     - lateralthinking-network
+     - lateral-network
   
   frontend:
-    container_name: lateralthinking-frontend
+    container_name: lateral-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -27,10 +27,10 @@ services:
         condition: service_started
     
     networks:
-      - lateralthinking-network
+      - lateral-network
 
   mongo:
-    container_name: lateralthinking-mongo
+    container_name: lateral-mongo
     image: mongo:7.0
     volumes:
       - mongodata:/data/db
@@ -40,11 +40,11 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - lateralthinking-network
+      - lateral-network
 
 volumes:
   mongodata:
     driver: local
 
 networks:
-  lateralthinking-network:
+  lateral-network:
