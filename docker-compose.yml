@@ -1,6 +1,6 @@
 services:
   backend:
-    container_name: lateralthinking-backend
+    container_name: lateral-backend
     build:
       context: ./backend
       dockerfile: Dockerfile
@@ -14,7 +14,7 @@ services:
       mongo:
         condition: service_healthy
     networks:
-      - lateralthinking-network
+      - lateral-network
     command: bash ./setup.sh
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:8001/health"]
@@ -24,7 +24,7 @@ services:
       start_period: 20s
 
   frontend:
-    container_name: lateralthinking-frontend
+    container_name: lateral-frontend
     build:
       context: ./frontend
       dockerfile: Dockerfile
@@ -38,10 +38,10 @@ services:
     command: npm run start
     
     networks:
-      - lateralthinking-network
+      - lateral-network
 
   mongo:
-    container_name: lateralthinking-mongo
+    container_name: lateral-mongo
     image: mongo:7.0
     volumes:
       - mongodata:/data/db
@@ -51,7 +51,7 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - lateralthinking-network
+      - lateral-network
     healthcheck:
       test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
       interval: 20s
@@ -61,7 +61,7 @@ services:
 
 
 networks:
-  lateralthinking-network:
+  lateral-network:
 
 volumes:
   mongodata:
