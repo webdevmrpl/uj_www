@@ -1,0 +1,50 @@
+services:
+  # do nothing
+  backend:
+    build: .devcontainer
+    command: /bin/sh -c "while sleep 1000; do :; done" # does nothing, otherwise a webserver instance will be spawned when opening with devcontainer
+    volumes:
+      - ./:/lateralthinking
+    environment:
+      IS_LOCAL: True
+    env_file:
+      - ./backend/var.env
+    ports:
+      - "3000:3000"
+      - "8001:8001"
+    networks:
+     - lateralthinking-network
+  
+  frontend:
+    container_name: lateralthinking-frontend
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    volumes:
+      - ./frontend:/lateralthinking/frontend
+    depends_on:
+      backend:
+        condition: service_started
+    
+    networks:
+      - lateralthinking-network
+
+  mongo:
+    container_name: lateralthinking-mongo
+    image: mongo:7.0
+    volumes:
+      - mongodata:/data/db
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: mongoadmin
+      MONGO_INITDB_ROOT_PASSWORD: password
+    ports:
+      - "27017:27017"
+    networks:
+      - lateralthinking-network
+
+volumes:
+  mongodata:
+    driver: local
+
+networks:
+  lateralthinking-network:
