@@ -174,5 +174,21 @@
          }
       ],
       "difficulty": 3
+   },
+   {
+      "title": "The Sleepless Caller",
+      "situation": "A man lies awake in bed, unable to fall asleep. Frustrated, he grabs his phone and makes a call. No one answers. After that, in about a minute, he finally drifts off peacefully.",
+      "solution": "The man's neighbor was snoring loudly through the thin apartment walls, keeping him awake. When the man made a call to the neighbor’s phone, the ringing disturbed the neighbor enough to make them shift position in their sleep and stop snoring. With the noise gone, the man was finally able to fall asleep.",
+      "key_points": [
+         {
+            "key_point": "The neighbor was snoring loudly.",
+            "hint": "What kind of sound could penetrate thin walls and disturb sleep?"
+         },
+         {
+            "key_point": "The phone call disturbed the neighbor’s sleep just enough to stop the snoring.",
+            "hint": "The call wasn't meant to be answered. It had another purpose."
+         }
+      ],
+      "difficulty": 2
    }
 ]
