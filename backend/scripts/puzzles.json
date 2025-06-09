@@ -16,7 +16,8 @@
             "key_point": "The teller gave the man a cash deposit box.",
             "hint": "The object given isn’t quite what you think it is. Consider what a bank might need to give out that isn't cash."
          }
-      ]
+      ],
+      "difficulty": 2
    },
    {
       "title": "The Locked Room Mystery",
@@ -35,7 +36,8 @@
             "key_point": "He fell and knocked himself out.",
             "hint": "His real-world environment caught him off guard while he was focused on the game."
          }
-      ]
+      ],
+      "difficulty": 3
    },
    {
       "title": "The Mystery of the Silent Employee",
@@ -50,7 +52,8 @@
             "key_point": "The employee set their ringtone to silent.",
             "hint": "It's a precaution to avoid distractions from the constant noise of phone calls."
          }
-      ]
+      ],
+      "difficulty": 1
    },
    {
       "title": "The Office Zombie",
@@ -65,7 +68,8 @@
             "key_point": "He wears a zombie costume for his job.",
             "hint": "The costume is part of a creative process rather than a personal choice."
          }
-      ]
+      ],
+      "difficulty": 1
    },
    {
       "title": "The Tech Paradox",
@@ -80,7 +84,8 @@
             "key_point": "They advise on avoiding over-reliance on technology.",
             "hint": "They help others find balance by stepping away from constant screen use."
          }
-      ]
+      ],
+      "difficulty": 2
    },
    {
       "title": "The Lucky Fall",
@@ -99,7 +104,8 @@
             "key_point": "The floor was a prop",
             "hint": "Numbers can be deceiving when everything is make-believe."
          }
-      ]
+      ],
+      "difficulty": 2
    },
    {
       "title": "The Mysterious Illness",
@@ -114,7 +120,8 @@
             "key_point": "He read too many medical articles",
             "hint": "Knowledge isn't always helpful - sometimes it can lead us astray."
          }
-      ]
+      ],
+      "difficulty": 2
    },
    {
       "title": "The Deadly Drink",
@@ -129,7 +136,8 @@
             "key_point": "He built up immunity gradually",
             "hint": "Think about how someone might safely handle dangerous substances over time."
          }
-      ]
+      ],
+      "difficulty": 2
    },
    {
       "title": "The Cold Room",
@@ -144,7 +152,8 @@
             "key_point": "Freeze means to pose",
             "hint": "The word has a different meaning in certain creative contexts."
          }
-      ]
+      ],
+      "difficulty": 1
    },
    {
       "title": "The Morning Race",
@@ -163,6 +172,23 @@
             "key_point": "They're recording her for video game development",
             "hint": "Why would someone want to study how an athlete moves?"
          }
-      ]
+      ],
+      "difficulty": 3
+   },
+   {
+      "title": "The Sleepless Caller",
+      "situation": "A man lies awake in bed, unable to fall asleep. Frustrated, he grabs his phone and makes a call. No one answers. After that, in about a minute, he finally drifts off peacefully.",
+      "solution": "The man's neighbor was snoring loudly through the thin apartment walls, keeping him awake. When the man made a call to the neighbor’s phone, the ringing disturbed the neighbor enough to make them shift position in their sleep and stop snoring. With the noise gone, the man was finally able to fall asleep.",
+      "key_points": [
+         {
+            "key_point": "The neighbor was snoring loudly.",
+            "hint": "What kind of sound could penetrate thin walls and disturb sleep?"
+         },
+         {
+            "key_point": "The phone call disturbed the neighbor’s sleep just enough to stop the snoring.",
+            "hint": "The call wasn't meant to be answered. It had another purpose."
+         }
+      ],
+      "difficulty": 2
    }
 ]
